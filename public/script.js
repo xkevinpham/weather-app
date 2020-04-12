@@ -5,7 +5,7 @@ const searchBox = new google.maps.places.SearchBox(searchElement)
 searchBox.addListener('places_changed', () => {
     const place = searchBox.getPlaces()[0]
     if (place == null) return
-    const latitute = place.geometry.location.lat()
+    const latitudes = place.geometry.location.lat()
     const longitude = place.geometry.location.lng()
     fetch('/weather', {
         method: 'POST',
@@ -14,10 +14,11 @@ searchBox.addListener('places_changed', () => {
             'Accept': 'application/json'
         },
         body: JSON.stringify({
-            latitute: latitute,
+            latitudes: latitudes,
             longitude: longitude
         })
     }).then(res => res.json()).then(data => {
+        console.log(data)
         setWeatherData(data, place.formatted_address)
-    });
-});
+    })
+})
