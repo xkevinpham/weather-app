@@ -23,32 +23,6 @@ app.post('/weather', (req, res) => {
         responseType: 'json'
     }).then(data => res.json(data.data))
 
-    // axios({
-    //     url: url,
-    //     responseType: 'json'
-    // }).then(data => res.json(data.data)).catch((error) => {
-    //     console.log(error)
-    // })
-
-    // axios({
-    //     "method":"GET",
-    //     "url":"https://weatherbit-v1-mashape.p.rapidapi.com/current",
-    //     "headers":{
-    //     "content-type":"application/octet-stream",
-    //     "x-rapidapi-host":"weatherbit-v1-mashape.p.rapidapi.com",
-    //     "x-rapidapi-key":"f87216c270msh94e8372b8f93d0bp1260a3jsnd6a553b6d984"
-    //     },"params":{
-    //     "lang":"undefined",
-    //     "lon":"<required>",
-    //     "lat":"<required>"
-    //     }
-    //     })
-    //     .then((response)=>{
-    //       console.log(response)
-    //     })
-    //     .catch((error)=>{
-    //       console.log(error)
-    //     })
 
 })
 
