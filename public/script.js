@@ -18,21 +18,24 @@ searchBox.addListener('places_changed', () => {
             longitude: longitude
         })
     }).then(res => res.json()).then(data => {
+        console.log(data)
         setWeatherData(data, place.formatted_address)
     })
 })
 
-const locationElement = document.querySelector(['data-location'])
-const statusElement = document.querySelector(['data-status'])
-const temperatureElement = document.querySelector(['data-temperature'])
-const precipitationElement = document.querySelector(['data-precipitationElement'])
-const windElement = document.querySelector(['data-wind'])
+const locationElement = document.querySelector('[data-location]')
+const statusElement = document.querySelector('[data-status]')
+const temperatureElement = document.querySelector('[data-temperature]')
+const precipitationElement = document.querySelector('[data-precipitationElement]')
+const windElement = document.querySelector('[data-wind]')
 
 function setWeatherData(data, place) {
-    console.log(place)
+    //console.log(place)
+    //console.log(data.weather.description)
     locationElement.textContent = place
     statusElement.textContent = data.weather.description
     temperatureElement.textContent = data.app_temp
-    precipitationElement.textContent = `${data/precip * 100}%`
-    windElement.textContent = data.weather.wind_spd
+    windElement.textContent = data.wind_spd
+    precipitationElement.textContent = data.precip
+    
 }

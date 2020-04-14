@@ -21,7 +21,7 @@ app.post('/weather', (req, res) => {
     axios({
         url:url,
         responseType: 'json'
-    }).then(data => res.json(data.data))
+    }).then(data => res.json(data.data.data[0]))
 
 
 })
