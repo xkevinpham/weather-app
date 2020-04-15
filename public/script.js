@@ -23,19 +23,19 @@ searchBox.addListener('places_changed', () => {
     })
 })
 
-const location = document.querySelector('[data-location]')
-const status = document.querySelector('[data-status]')
-const temperature = document.querySelector('[data-temperature]')
-const precipitation = document.querySelector('[data-precipitationElement]')
+const locationElement = document.querySelector('[data-location]')
+const statusElement = document.querySelector('[data-status]')
+const temperatureElement = document.querySelector('[data-temperature]')
+const precipitationElement = document.querySelector('[data-precipitation]')
 const windSpeed = document.querySelector('[data-wind]')
 
 function setWeatherData(data, place) {
     //console.log(place)
     //console.log(data.weather.description)
-    location.textContent = place
-    status.textContent = data.weather.description
-    temperature.textContent = data.app_temp
+    locationElement.textContent = place
+    statusElement.textContent = data.weather.description
+    temperatureElement.textContent = data.app_temp
     windSpeed.textContent = data.wind_spd
-    precipitation.textContent = data.precip
+    precipitationElement.textContent = data.precip
     
 }
